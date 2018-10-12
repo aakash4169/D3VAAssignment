@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Bar Chart D3</title>
+      <title>VA D3</title>
       <script src="https://d3js.org/d3.v5.min.js"></script>
       <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
       <script src="https://d3js.org/topojson.v2.min.js"></script>
@@ -161,10 +161,9 @@
                       .entries(masterData.filter(function(d) {return d.Damage_Descp === type;}))
                       
         }
-        // console.log("CHOR CHART DATA\n")
+        
         myChorData.filter(function(d,i) {
-          // console.log(d.key, d.value)
-          // console.log(d.value)  
+            
           return null})
       //   console.log(myChorData)
       }
@@ -175,7 +174,7 @@
       }
 
       function createBarChart(chartData) {
-        // console.log(chartData)
+        
         var svg = d3.select("#svg-bar")
                     .attr("width", svgWidth_bar)
                     .attr("height", svgHeight_bar)
@@ -197,7 +196,7 @@
                               .domain([0, d3.max(chartData, function(d) { return (d.value/1000000); })])
                               .range([0, gWidth_bar]);
 
-        // generate axis
+        
         svg.append("g")
             .attr("transform", "translate(20,0)")
             .call(d3.axisLeft(yScale));
@@ -248,7 +247,7 @@
             .attr("width",mapWidth)
             .attr("height",mapHeight);
 
-        //var idFormat = new format("dd")
+        
 
         var losses = d3.map();
         myChorData.map(function(d,i) { 
